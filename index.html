@@ -142,11 +142,10 @@
     .feature-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; font-weight: 500; color: var(--dark); margin-bottom: 14px; }
     .feature-list li::before { content: '✓'; flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 800; margin-top: 3px; }
     
-    /* 🌟 修改处：首页大图改为完整展示，不再裁切 */
     .set-image { 
       border-radius: 20px; 
       overflow: hidden; 
-      background: #F8F9FC; /* 加个浅色底显得干净 */
+      background: #F8F9FC; 
       box-shadow: 0 20px 40px -15px rgba(26, 30, 41, 0.15); 
       transform: rotate(2deg); 
       transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
@@ -155,14 +154,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 10px; /* 边缘留点白 */
+      padding: 10px; 
     }
     .set-card-2 .set-image { transform: rotate(-2deg); }
     .set-image:hover { transform: rotate(0deg) scale(1.03); }
     .set-image img { 
       width: 100%; 
-      aspect-ratio: 4 / 3; /* 保持统一比例 */
-      object-fit: contain; /* 核心：完整显示，不裁切 */
+      aspect-ratio: 4 / 3; 
+      object-fit: contain; 
       border-radius: 12px;
     }
 
@@ -223,7 +222,7 @@
     
     .product-gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 电脑端一行 3 个 */
+      grid-template-columns: repeat(3, 1fr); 
       gap: 30px;
     }
     
@@ -232,7 +231,7 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      aspect-ratio: 4 / 3; /* 横向长方形 */
+      aspect-ratio: 4 / 3; 
       background-color: #F5F7FA; 
       border-radius: 16px;
       border: 1px solid var(--line);
@@ -318,7 +317,8 @@
   <header>
     <div class="container nav">
       <div class="logo" onclick="switchView('home-view')" aria-label="FitPack Home">
-        <img src="https://cdn.jsdelivr.net/gh/zachary2094410095-lang/Fitpac@main/assets/logo.png" alt="FitPack Logo" class="logo-img" onerror="this.outerHTML='&lt;span class=&quot;logo-fallback&quot;&gt;FitPack&lt;/span&gt;'" />
+        <!-- 🚨 注意：要显示本地 Logo，请把 src 后面那串网址改成 images/logo.png -->
+        <img src="images/logo.png" alt="FitPack Logo" class="logo-img" onerror="this.outerHTML='&lt;span class=&quot;logo-fallback&quot;&gt;FitPack&lt;/span&gt;'" />
       </div>
 
       <nav class="nav-links">
@@ -371,7 +371,7 @@
           <button class="btn btn-gradient" onclick="switchView('product-mylar')">Explore Lookbook →</button>
         </div>
         <div class="set-image">
-          <img src="images/home-collection-1.jpg" alt="Mylar Bag and Box Set" onerror="this.src='https://via.placeholder.com/800x600?text=home-collection-1.jpg'" />
+          <img src="images/home-collection-1.png" alt="Mylar Bag and Box Set" onerror="this.src='https://via.placeholder.com/800x600?text=home-collection-1.png'" />
         </div>
       </article>
 
@@ -391,7 +391,7 @@
           <button class="btn btn-gradient" onclick="switchView('product-sticker-custom')">Explore Lookbook →</button>
         </div>
         <div class="set-image">
-          <img src="images/home-collection-2.jpg" alt="3D Sticker and Glass Bottle" onerror="this.src='https://via.placeholder.com/800x600?text=home-collection-2.jpg'" />
+          <img src="images/home-collection-2.png" alt="3D Sticker and Glass Bottle" onerror="this.src='https://via.placeholder.com/800x600?text=home-collection-2.png'" />
         </div>
       </article>
     </section>
@@ -409,7 +409,7 @@
         </div>
 
         <div class="promo-banner-entry" onclick="switchView('promo-categories')">
-          <img src="images/home-promo-banner.jpg" alt="Big Promotion Categories" onerror="this.src='https://via.placeholder.com/1200x400?text=home-promo-banner.jpg'" />
+          <img src="images/home-promo-banner.png" alt="Big Promotion Categories" onerror="this.src='https://via.placeholder.com/1200x400?text=home-promo-banner.png'" />
           <div class="promo-banner-overlay">
             <h3>Explore Clearance Categories</h3>
             <p>Shaped Bags • Stand Up Pouches • Bag &amp; Box Sets</p>
@@ -425,7 +425,7 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="https://cdn.jsdelivr.net/gh/zachary2094410095-lang/Fitpac@main/assets/logo.png" alt="FitPack Logo" class="footer-logo" onerror="this.style.display='none'; document.getElementById('footerLogoText').style.display='block';" />
+            <img src="images/logo.png" alt="FitPack Logo" class="footer-logo" onerror="this.style.display='none'; document.getElementById('footerLogoText').style.display='block';" />
             <span class="footer-logo-text" id="footerLogoText" style="display:none; color:#fff; font-family:'Manrope'; font-size:28px; font-weight:800; margin-bottom:20px; display:block;">FitPack</span>
             <div class="footer-company">Shenzhen Fitpac Packaging Co., Ltd.</div>
             <p class="footer-desc">Your creative packaging partner. We specialize in custom sets that make your brand pop off the shelf.</p>
@@ -508,7 +508,7 @@
 
       <!-- 顶部主图 (图3) -->
       <div class="lookbook-hero">
-        <img src="images/bags-main.jpg" alt="Mylar Bag & Box Set Full Collection" onerror="this.src='https://via.placeholder.com/1600x800?text=bags-main.jpg'" />
+        <img src="images/bags-main.png" alt="Mylar Bag & Box Set Full Collection" onerror="this.src='https://via.placeholder.com/1600x800?text=bags-main.png'" />
         <div class="lookbook-hero-overlay">
           <h1>The Mylar Bag &amp; Window Box Set</h1>
           <p>A completely unified unboxing experience. We match the materials, finishes and colors of your outer carry bag and inner product box.</p>
@@ -526,25 +526,25 @@
         </div>
         
         <div class="product-gallery-grid">
-          <!-- ⚠️ 请确保你本地的图片后缀名（.png / .jpg）与下面代码完全一致 -->
-          <div class="img-box"><img src="images/bags-01.png" alt="Design 01" onerror="this.src='https://via.placeholder.com/600x450?text=bags-01'" /></div>
-          <div class="img-box"><img src="images/bags-02.jpg" alt="Design 02" onerror="this.src='https://via.placeholder.com/600x450?text=bags-02'" /></div>
-          <div class="img-box"><img src="images/bags-03.png" alt="Design 03" onerror="this.src='https://via.placeholder.com/600x450?text=bags-03'" /></div>
+          <!-- 全部统一为 .png 格式，请确保本地图片也是 png -->
+          <div class="img-box"><img src="images/bags-01.png" alt="Design 01" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-01.png'" /></div>
+          <div class="img-box"><img src="images/bags-02.png" alt="Design 02" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-02.png'" /></div>
+          <div class="img-box"><img src="images/bags-03.png" alt="Design 03" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-03.png'" /></div>
           
-          <div class="img-box"><img src="images/bags-04.png" alt="Design 04" onerror="this.src='https://via.placeholder.com/600x450?text=bags-04'" /></div>
-          <div class="img-box"><img src="images/bags-05.png" alt="Design 05" onerror="this.src='https://via.placeholder.com/600x450?text=bags-05'" /></div>
-          <div class="img-box"><img src="images/bags-06.jpg" alt="Design 06" onerror="this.src='https://via.placeholder.com/600x450?text=bags-06'" /></div>
+          <div class="img-box"><img src="images/bags-04.png" alt="Design 04" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-04.png'" /></div>
+          <div class="img-box"><img src="images/bags-05.png" alt="Design 05" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-05.png'" /></div>
+          <div class="img-box"><img src="images/bags-06.png" alt="Design 06" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-06.png'" /></div>
           
-          <div class="img-box"><img src="images/bags-07.jpg" alt="Design 07" onerror="this.src='https://via.placeholder.com/600x450?text=bags-07'" /></div>
-          <div class="img-box"><img src="images/bags-08.png" alt="Design 08" onerror="this.src='https://via.placeholder.com/600x450?text=bags-08'" /></div>
-          <div class="img-box"><img src="images/bags-09.png" alt="Design 09" onerror="this.src='https://via.placeholder.com/600x450?text=bags-09'" /></div>
+          <div class="img-box"><img src="images/bags-07.png" alt="Design 07" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-07.png'" /></div>
+          <div class="img-box"><img src="images/bags-08.png" alt="Design 08" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-08.png'" /></div>
+          <div class="img-box"><img src="images/bags-09.png" alt="Design 09" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-09.png'" /></div>
           
-          <div class="img-box"><img src="images/bags-10.png" alt="Design 10" onerror="this.src='https://via.placeholder.com/600x450?text=bags-10'" /></div>
-          <div class="img-box"><img src="images/bags-11.png" alt="Design 11" onerror="this.src='https://via.placeholder.com/600x450?text=bags-11'" /></div>
-          <div class="img-box"><img src="images/bags-12.png" alt="Design 12" onerror="this.src='https://via.placeholder.com/600x450?text=bags-12'" /></div>
+          <div class="img-box"><img src="images/bags-10.png" alt="Design 10" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-10.png'" /></div>
+          <div class="img-box"><img src="images/bags-11.png" alt="Design 11" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-11.png'" /></div>
+          <div class="img-box"><img src="images/bags-12.png" alt="Design 12" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-12.png'" /></div>
           
-          <div class="img-box"><img src="images/bags-13.png" alt="Design 13" onerror="this.src='https://via.placeholder.com/600x450?text=bags-13'" /></div>
-          <div class="img-box"><img src="images/bags-14.png" alt="Design 14" onerror="this.src='https://via.placeholder.com/600x450?text=bags-14'" /></div>
+          <div class="img-box"><img src="images/bags-13.png" alt="Design 13" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-13.png'" /></div>
+          <div class="img-box"><img src="images/bags-14.png" alt="Design 14" onerror="this.src='https://via.placeholder.com/600x450?text=missing+bags-14.png'" /></div>
         </div>
       </div>
     </div>
@@ -557,7 +557,7 @@
 
       <!-- 顶部主图 (图4) -->
       <div class="lookbook-hero">
-        <img src="images/jars-main.jpg" alt="3D Sticker & Glass Bottle Full Collection" onerror="this.src='https://via.placeholder.com/1600x800?text=jars-main.jpg'" />
+        <img src="images/jars-main.png" alt="3D Sticker & Glass Bottle Full Collection" onerror="this.src='https://via.placeholder.com/1600x800?text=jars-main.png'" />
         <div class="lookbook-hero-overlay">
           <h1>The 3D Sticker &amp; Glass Bottle Set</h1>
           <p>The glass bottle carries the weight; the 3D sticker carries the brand — raised, domed and die-cut to the bottle's curve so no edge lifts.</p>
@@ -575,18 +575,18 @@
         </div>
         
         <div class="product-gallery-grid">
-          <!-- ⚠️ 请确保你本地的图片后缀名（.png / .jpg）与下面代码完全一致 -->
-          <div class="img-box"><img src="images/jars-01.png" alt="Design 01" onerror="this.src='https://via.placeholder.com/600x450?text=jars-01'" /></div>
-          <div class="img-box"><img src="images/jars-02.png" alt="Design 02" onerror="this.src='https://via.placeholder.com/600x450?text=jars-02'" /></div>
-          <div class="img-box"><img src="images/jars-03.png" alt="Design 03" onerror="this.src='https://via.placeholder.com/600x450?text=jars-03'" /></div>
+          <!-- 全部统一为 .png 格式，请确保本地图片也是 png -->
+          <div class="img-box"><img src="images/jars-01.png" alt="Design 01" onerror="this.src='https://via.placeholder.com/600x450?text=missing+jars-01.png'" /></div>
+          <div class="img-box"><img src="images/jars-02.png" alt="Design 02" onerror="this.src='https://via.placeholder.com/600x450?text=missing+jars-02.png'" /></div>
+          <div class="img-box"><img src="images/jars-03.png" alt="Design 03" onerror="this.src='https://via.placeholder.com/600x450?text=missing+jars-03.png'" /></div>
           
-          <div class="img-box"><img src="images/jars-04.png" alt="Design 04" onerror="this.src='https://via.placeholder.com/600x450?text=jars-04'" /></div>
-          <div class="img-box"><img src="images/jars-05.png" alt="Design 05" onerror="this.src='https://via.placeholder.com/600x450?text=jars-05'" /></div>
-          <div class="img-box"><img src="images/jars-06.png" alt="Design 06" onerror="this.src='https://via.placeholder.com/600x450?text=jars-06'" /></div>
+          <div class="img-box"><img src="images/jars-04.png" alt="Design 04" onerror="this.src='https://via.placeholder.com/600x450?text=missing+jars-04.png'" /></div>
+          <div class="img-box"><img src="images/jars-05.png" alt="Design 05" onerror="this.src='https://via.placeholder.com/600x450?text=missing+jars-05.png'" /></div>
+          <div class="img-box"><img src="images/jars-06.png" alt="Design 06" onerror="this.src='https://via.placeholder.com/600x450?text=missing+jars-06.png'" /></div>
           
-          <div class="img-box"><img src="images/jars-07.png" alt="Design 07" onerror="this.src='https://via.placeholder.com/600x450?text=jars-07'" /></div>
-          <div class="img-box"><img src="images/jars-08.png" alt="Design 08" onerror="this.src='https://via.placeholder.com/600x450?text=jars-08'" /></div>
-          <div class="img-box"><img src="images/jars-09.png" alt="Design 09" onerror="this.src='https://via.placeholder.com/600x450?text=jars-09'" /></div>
+          <div class="img-box"><img src="images/jars-07.png" alt="Design 07" onerror="this.src='https://via.placeholder.com/600x450?text=missing+jars-07.png'" /></div>
+          <div class="img-box"><img src="images/jars-08.png" alt="Design 08" onerror="this.src='https://via.placeholder.com/600x450?text=missing+jars-08.png'" /></div>
+          <div class="img-box"><img src="images/jars-09.png" alt="Design 09" onerror="this.src='https://via.placeholder.com/600x450?text=missing+jars-09.png'" /></div>
         </div>
       </div>
     </div>
